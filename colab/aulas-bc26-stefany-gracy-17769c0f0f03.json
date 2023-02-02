@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "aulas-bc26-stefany-gracy",
+  "private_key_id": "17769c0f0f036c5f229544fa971f037b91f8a890",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCkVXN7nF9vVU3e\nqSHSyD3eJpEWL8Ld3mfRfVXhVC3UEKQvT9ItlePKSWxfsl2fY6lV4KhGQcpPUcSE\nkrIj74Zh61mpNymRK/A1IYHkh20VsaMSYN2EhNiZSJZv5lPSatkzj7qHCfnf2zs3\nVboojCXBGf58qx5DON7XGq2QKDSFRsP5H4UVa2g16kqtLCgopuW0sJ4pVX5Rpn9i\nI+qTzgTgGRiOOHSzrrse+0Xr87UOR7yxgMqrZQh65zjer8Hys800Z9KqQDp82q94\n7Yi1r4dmr88PdW4MsalK3iRK5475bmfRTw4iMNGw7R1UyUX9t/WOkMKOXgIQ46hy\nrciF1Pa1AgMBAAECggEAAOLCBthKrmWyEAFu4H06UiR4kztKLFp6ykcH67lBrvsw\n+11Nh3ffnLNFHYXvWcDWhJM7rPdFUSSib8l/otBzc7sqRk55D6KCPrMRyWrOdHe6\n5oo1n3V82mSpBOzjpkZzqcK8UWaFHYcHvG5enMHWoUIT3FWqydd4YgXvig+hatd6\n2GG/VcwoDwXPxdGD2Q22ogZxkAGUv5t9EhIZRubnwy1ZB2WlOxm9WgcTdTGnmZtS\nFH0qy8Ghku4xCXFMxetwpD5KDHIDp/YHwn8asSGvODFjaWMJhXhQoHuNBuRFEd3d\nuJoIaHX4CGcbQ7iSU0a9LPDr12sYkvdal9ohQ/MfeQKBgQDOJSChv1zvMjxRomHI\nphJEGbgmnLXBuvJZHvxByzcS094pZqeK59hCAtiL75a9wnGFyePsgQGePe/ThQoZ\n9lsxAsFoY4b0Tame9pKT51mSlno3HatKdfN/lBR8xOnbbBLbPJNNiAychEiYvaaw\nUtiKi1uXrY0NkYSEjSyrj/SnzQKBgQDME7O5c8Z4KOoXBd8WcmlgZATnjT6fpTUE\nVvYguIOfMO3JHJG5+BDYk5UO8TrfjdeHTZ2/mjneJTike6UjNOY+kywXfZL5BZFK\nGnWiM1b4WDGIKf2ov0Nv+bGNHQ6UHCt5ZlmMbalgNLHNupU8GJ463ucOuy1cFZ4l\nYLkC0EXSiQKBgHTYUI295RRjmhL/goNztmjJVzrzmoZLy7A+QuecIwRV+NfoqtCu\nJ0MLT+jJjdzTSPt3euyEFwG1w6lWAGrE292E3VGpEEaLerhytJSHDptrFa0F8SBM\niQ9oRNCP4KoRsQJ5bFkG43cX9/ozjTbmTn0BDpKDua7WK5HiX06DUz6FAoGADVF3\n2DGDEVJyPIBol7ltwRml7EqefKK2fAsE0wvXoyr5SbewlvdmegvfnXMGyZIjL7RU\nCC4TerjpImrjUxHfuNO3++x5DAFeAv0JEkXRdjGjQeSjpkCdMRCVksUDr4zLFYgl\nbfG2LQ4jUG7N0Hc21Fa5s49pnWnXwU63pERdWikCgYBULz3pjAQHsfE4uGJXK4SH\nMBf7fHNMWt/MBscnvgfr+RtY+LVVosxwhhGIb59RqfH1kEZD66YlYOCKbCpA+Jli\nndWkKARgDCnEsD+ZJAqOLl/Ce3U21YmiXmUCXa06Q5m0fdFk44UQt4z2scRQ5BdN\n/sKC3meiJ9JbmGS71ev1Ww==\n-----END PRIVATE KEY-----\n",
+  "client_email": "acesso-colab@aulas-bc26-stefany-gracy.iam.gserviceaccount.com",
+  "client_id": "112780801268294744294",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/acesso-colab%40aulas-bc26-stefany-gracy.iam.gserviceaccount.com"
+}
