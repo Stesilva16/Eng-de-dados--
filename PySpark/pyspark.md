@@ -44,10 +44,6 @@ Para rodar, necessário ter o JVM instalado
 
  Os códigos, nas diferentes linguagens, serão convertidos para um formato próprio, chamado RDD – depois serão processados em cluster pela Spark Engine
 
-![image-20230201193415490](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193415490.png)
-
-
-
 O Apache Spark foi desenvolvido para processar dados massivos em cluster
 
  Obs: o Spark não possui uma ferramenta de gerenciamento de cluster – necessário utilizar outras ferramentas com o Yarn (gerenciador de cluster do Radoop), Mesos e Kubernets
@@ -60,143 +56,36 @@ PYSPARK NA PRÁTICA
 
 · A máquina do Google Colab, por padrão, possui o Apache Spark já instalado, necessitando somente instalar a biblioteca PySpark, para poder manuseá-lo com Python
 
+<h4>PySpark:</h4>
 
+Instalação da biblioteca PySpark:
 
-· Instalação biblioteca PySpark
+!pip install pyspark
 
-![image-20230201193347935](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193347935.png)
+Criação de uma sessão para executar comandos do PySpark:
 
-· Criar sessão para executar comandos do PySpark
+from pyspark.sql import SparkSession
 
-![image-20230201193437400](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193437400.png)
+spark = SparkSession.builder.appName("ETL_with_PySpark").getOrCreate()
 
-· Importando funções do PySpark
+Importação de funções do PySpark:
 
-![image-20230201193510106](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193510106.png)
+from pyspark.sql.functions import lit, col
 
-![image-20230201193525515](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193525515.png)
+Aplicar filtros:
 
-![image-20230201193537332](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193537332.png)
+df = df.filter(col("coluna1") > 10)
+Método .withColumn():
 
-![image-20230201193549692](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193549692.png)
+df = df.withColumn("coluna_nova", lit("valor_literal"))
 
-![image-20230201193603314](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193603314.png)
+Right join:
 
-![image-20230201193617820](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193617820.png)
+df_right_join = df_esquerda.join(df_direita, on="coluna_comum", how="right")
 
-![image-20230201193629650](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193629650.png)
-
-![image-20230201193647792](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193647792.png)
-
-![image-20230201193659943](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193659943.png)
-
-![image-20230201193714268](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193714268.png)
-
-![image-20230201193945700](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201193945700.png)
-
-![image-20230201194001277](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194001277.png)
-
-FILTROS
-
-Outra forma de se aplicar filtros
-
-![image-20230201194028434](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194028434.png)
-
-![image-20230201194045859](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194045859.png)
-
-![image-20230201194106247](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194106247.png)
-
-![image-20230201194120253](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194120253.png)
-
-· Observação: esse comando não criou novo dataframe, logo ele não é definitivo
-
-· Método: .withColumn()
-
-· Primeiro parâmetro é o nome da nova coluna
-
-· Segundo parâmetro é função que determina os valores da coluna
-
-o F.lit() permite passar um valor literal, uma string (todas as linhas possuirão mesmo valor literal nessa coluna)
-
-![image-20230201194141207](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194141207.png)
-
-![image-20230201194153359](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194153359.png)
-
-![image-20230201194206959](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194206959.png)
-
-![image-20230201194219728](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194219728.png)
-
-![image-20230201194234162](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194234162.png)
-
-![image-20230201194433632](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194433632.png)
-
-![image-20230201194444426](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194444426.png)
-
-![image-20230201194455005](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194455005.png)
-
-![image-20230201194505481](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194505481.png)
-
-![image-20230201194516904](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201194516904.png)
-
-TRANSFORMAÇÃO DOS DADOS
-
-
-
-· Separar string em substrings
-
-![image-20230201195604928](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201195604928.png)
-
-![image-20230201195618330](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201195618330.png)
-
-![image-20230201195630641](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201195630641.png)
-
-![image-20230201195645751](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201195645751.png)
-
-![image-20230201195658312](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201195658312.png)
-
-![image-20230201195708740](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201195708740.png)
-
-![image-20230201195727755](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201195727755.png)
-
-![image-20230201195740363](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201195740363.png)
-
-![image-20230201195914718](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201195914718.png)
-
-![image-20230201195927903](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201195927903.png)
-
-![image-20230201195939290](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201195939290.png)
-
-![image-20230201195954529](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201195954529.png)
-
-![image-20230201200007064](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201200007064.png)
-
-![image-20230201200019303](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201200019303.png)
-
-![image-20230201200033295](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201200033295.png)
-
-Right Join
-
-· Considera todo conteúdo da tabela da direita importantes, devendo ser obrigatoriamente mostrados
-
-· Right join faz com que registros que não possuem correspondência na tabela da esquerda apareçam com valores nulos
-
-![image-20230201200055331](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201200055331.png)
-
-![image-20230201200137789](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201200137789.png)
-
-![image-20230201200202717](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201200202717.png)
-
-![image-20230201200218316](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201200218316.png)
-
-![image-20230201200237280](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201200237280.png)
-
-![image-20230201200252582](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201200252582.png)
-
-![image-20230201200308698](C:\Users\stefa\AppData\Roaming\Typora\typora-user-images\image-20230201200308698.png)
+Esses são apenas exemplos básicos, e a complexidade dos comandos pode aumentar dependendo da quantidade e tipo de dados que você precisa manipular. É importante ler a documentação do PySpark e dos métodos específicos para entender suas funcionalidades e como usá-los corretamente.
 
 TIPOS BÁSICOS DE DADOS DO SPARK
-
-
 
 Tipos básicos
 
@@ -220,8 +109,6 @@ Tipos básicos
 
 · NULL Para mais informações: https://spark.apache.org/docs/latest/sql-ref-datatypes.html
 
-
-
 Tipos complexos
 
 · TimestampType – DateTime
@@ -240,4 +127,4 @@ STRUCT TYPES
 
 · Definir os tipos das colunas, ao invés de solicitar ao Spark que infira o schema
 
-o Os dados inseridos que não forem do tipo determinado entrarão como nulos (o que pode ser interessante para se procurar inconsistências nas linhas – funcionando como uma espécie de validação)
+Os dados inseridos que não forem do tipo determinado entrarão como nulos (o que pode ser interessante para se procurar inconsistências nas linhas – funcionando como uma espécie de validação)
